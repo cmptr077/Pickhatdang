@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+    <h1>PickHatDang</h1>
+    <hr>
+    <form class="site-form" action="" method="post">
+        {%  csrf_token %}
+        {{ form }}
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
