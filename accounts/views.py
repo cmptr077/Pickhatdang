@@ -20,9 +20,8 @@ def login_view(request):
 
 
 def logout(request):
-    if request.method == 'POST':
-        logout(request)
-    return redirect('home')
+    logout(request)
+    return redirect('accounts:login')
 
 
 def register(request):
@@ -30,7 +29,7 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            return redirect('')
+            return redirect('accounts:login')
     else:
         form = UserCreationForm()
     return render(request, 'accounts/register.html', {'form': form})
